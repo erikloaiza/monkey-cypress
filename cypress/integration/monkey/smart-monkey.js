@@ -677,6 +677,17 @@ describe( `${appName} under smarter monkeys`, function() {
                 curPageMaxX = Math.max( d.body.scrollWidth, d.body.offsetWidth, d.documentElement.clientWidth, d.documentElement.scrollWidth, d.documentElement.offsetWidth) - win.innerWidth
             })
             cy.wait(1000)
+
+            cy.get('#ember6').then((element) => {
+                cy.wrap(element).type('erik.loaiza.p@gmail.com');
+            })
+            cy.get('#ember8').then((element) => {
+                cy.wrap(element).type('@1234567890');
+            })
+            cy.get('#ember10').then((element) => {
+                cy.wrap(element).click({force:true});
+            })
+            
             //Add an event for each type of event in order to enter the else statement of randomEvent method
             for(let i = 0; i < events + 7; i++){
                 evtIndex++
